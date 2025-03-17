@@ -33,11 +33,14 @@ while running:
     posX += speedX
     posY += speedY
 
-    # kui puudub ääri, siis muudab suunda
-    if posX > screenX or posX < 0:
+    # Põrkub servast serva ilma, et vajub akna äärdesse
+    ball_width = ball.get_width()
+    ball_height = ball.get_height()
+
+    if posX + ball_width > screenX or posX < 0:
         speedX = -speedX
 
-    if posY > screenY or posY < 0:
+    if posY + ball_height > screenY or posY < 0:
         speedY = -speedY
 
     # graafika kuvamine ekraanil

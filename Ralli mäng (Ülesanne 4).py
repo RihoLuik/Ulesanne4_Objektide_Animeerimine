@@ -21,6 +21,7 @@ blue_car = pygame.image.load("images/Ralli/f1_blue.png")
 # Resize images
 red_car = pygame.transform.scale(red_car, (50, 80))
 blue_car = pygame.transform.scale(blue_car, (50, 80))
+blue_car = pygame.transform.rotate(blue_car, 180)
 
 # Set up screen
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -63,8 +64,8 @@ while running:
                 score += 1  # Increase score
 
             # Collision Detection
-            red_rect = pygame.Rect(red_x, red_y, 50, 80)
-            blue_rect = pygame.Rect(car[0], car[1], 50, 80)
+            red_rect = pygame.Rect(red_x, red_y, 47.5, 80)
+            blue_rect = pygame.Rect(car[0], car[1], 47.5, 80)
             if red_rect.colliderect(blue_rect):
                 game_over = True
 
